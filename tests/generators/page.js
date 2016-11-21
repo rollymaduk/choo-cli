@@ -4,6 +4,7 @@ const testUtils = require('../../lib/test-utils')
 const exec = require('../../lib/exec')
 
 test('Page Generator', t => {
+  t.plan(1)
   exec('choo-generate.js', ['page', 'testPage'], {
     cwd: testUtils.tempDir
   }, () => {
@@ -12,6 +13,5 @@ test('Page Generator', t => {
     ]).forEach(file => {
       t.assert(file.exists, `${file.name} must be generated.`)
     })
-    t.end()
   })
 })

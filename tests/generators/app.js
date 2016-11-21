@@ -5,6 +5,7 @@ const clinton = require('clinton')
 const exec = require('../../lib/exec')
 
 test('App Generator', t => {
+  t.plan(14)
   exec('choo-new.js', ['temp'], {
     cwd: testUtils.cwd
   }, () => {
@@ -43,10 +44,9 @@ test('App Generator', t => {
           t.notOk(check, check.message)
         }
       })
-      t.end()
     }).catch(errors => {
       t.notOk(errors)
-      t.end()
     })
   })
 })
+
